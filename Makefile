@@ -23,6 +23,9 @@ run: build
 	@echo "Running server"
 	@./${PKG_SERVER_BIN}
 
+run-shrinked: build
+	@echo "Running shrinked server"
+	@./${PKG_SERVER_BIN_SHRINKED}
 
 create-task:
 	@echo "Creating task"
@@ -31,6 +34,10 @@ create-task:
 bench-echo:
 	@echo "Benchmarking echo"
 	@hey -n 10000 -c 100 http://localhost:8080/echo?name=sacré-tech
+
+bench-ohce:
+	@echo "Benchmarking echo"
+	@hey -n 10000 -c 100 http://localhost:8080/ohce?name=sacré-tech
 
 bench-tasks:
 	@echo "Benchmarking tasks"
@@ -44,6 +51,10 @@ create-task-docker:
 bench-echo-docker:
 	@echo "Benchmarking echo"
 	@hey -n 10000 -c 100 http://localhost:8081/echo?name=sacré-tech
+
+bench-ohce-docker:
+	@echo "Benchmarking echo"
+	@hey -n 10000 -c 100 http://localhost:8081/ohce?name=sacré-tech
 
 bench-tasks-docker:
 	@echo "Benchmarking tasks"

@@ -42,7 +42,8 @@ func main() {
 
 	// Configuration des routes
 	mux := http.NewServeMux()
-	mux.HandleFunc("/", echoHandler.Echo)
+	mux.HandleFunc("/echo", echoHandler.Echo)
+	mux.HandleFunc("/ohce", echoHandler.Ohce)
 	mux.HandleFunc("/tasks", taskHandler.GetTasks)
 	mux.HandleFunc("/task", taskHandler.CreateTask)
 
